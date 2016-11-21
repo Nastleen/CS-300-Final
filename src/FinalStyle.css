@@ -13,7 +13,7 @@
 .carousel .item
 {
     height: 500px;
-    interval: 1000 * 7;
+    interval: 7000;
 }
 
 h1 {
