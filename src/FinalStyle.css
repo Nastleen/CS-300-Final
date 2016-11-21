@@ -1,7 +1,7 @@
 .carousel-inner > .item > img
 {
     position: absolute;
-    top: 0;
+    top: -175px;
     left: 0;
     width: auto;
     height: auto;
@@ -13,4 +13,9 @@
 .carousel .item
 {
     height: 500px;
+    interval: 1000 * 7;
+}
+
+h1 {
+    color: ghostwhite;
 }
