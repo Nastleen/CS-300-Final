@@ -26,6 +26,28 @@
     <script>
         $("#includeNavMenu").load("NavMenu.html");
     </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".description").hide();
+            $("#biking-icon").click(function() {
+                $(".description").hide();
+                $("#bikingDesc").toggle();
+            });
+            $("#camping-icon").click(function() {
+                $(".description").hide();
+                $("#campingDesc").toggle();
+            });
+            $("#fishing-icon").click(function() {
+                $(".description").hide();
+                $("#fishingDesc").toggle();
+            });
+            $("#hiking-icon").click(function() {
+                $(".description").hide();
+                $("#hikingDesc").toggle();
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -37,11 +59,26 @@
     </div>
     <div class="row">
         <center>
-            <img src="img/Activities/biking.png" class="act" alt="Short alt text">
-            <img src="img/Activities/camping.png" class="act" alt="Short alt text">
-            <img src="img/Activities/fishing.png" class="act" alt="Short alt text">
-            <img src="img/Activities/hiking.png" class="act" alt="Short alt text">
+            <img src="img/Activities/biking.png" id="biking-icon" class="act" alt="Short alt text">
+            <img src="img/Activities/camping.png" id="camping-icon" class="act" alt="Short alt text">
+            <img src="img/Activities/fishing.png" id="fishing-icon" class="act" alt="Short alt text">
+            <img src="img/Activities/hiking.png" id="hiking-icon" class="act" alt="Short alt text">
         </center>
+    </div>
+    <div class="row description" id="bikingDesc">
+        test
+        tes
+        tes
+    </div>
+    <div class="row description" id="campingDesc">
+        test
+    </div>
+    <div class="row description" id="fishingDesc">
+        tes
+        tessdgsdgsdgsdg
+    </div>
+    <div class="row description" id="hikingDesc">
+        tessdgsdgsdgsdg
     </div>
 </div>
 
