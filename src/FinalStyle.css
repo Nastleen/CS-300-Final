@@ -31,3 +31,18 @@
 h3 {
     color: darkgreen;
 }
+
+.carousel-caption > h1 {
+    background-color: tan;
+    max-width: 350px;
+    text-align: center;
+    color: antiquewhite;
+}
+
+.carousel-caption {
+    text-align: center;
+}
+
+#socialFont {
+    font-family: "Comic Sans MS";
+}
