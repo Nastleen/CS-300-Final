@@ -16,6 +16,11 @@
     interval: 5000;
 }
 
-h1 {
-    color: ghostwhite;
+.page-header {
+    text-align: center;
+    color: darkslategray;
+}
+
+#footerRight {
+    text-align: right;
 }
