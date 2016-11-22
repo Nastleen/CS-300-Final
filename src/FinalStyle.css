@@ -46,3 +46,16 @@ h3 {
 #socialFont {
     font-family: "Comic Sans MS";
 }
+
+.gallery-image {
+    display: inline-block;
+    vertical-align: middle;
+    width-max: 100px;
+}
+
+#galleryHeader {
+    padding-top: 30px;
+    font-style: italic;
+    color: darkgreen;
+    font-family: cursive;
+}

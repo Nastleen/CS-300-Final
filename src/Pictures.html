@@ -21,6 +21,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="PicturesJS.js"></script>
 
 </head>
 
@@ -37,29 +38,29 @@
 <div class="container">
     <div class="row">
         <div class="page-header">
-            <h1>Gallery</h1>
+            <h1 id="galleryHeader">Gallery</h1>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-xs-6 col-md-3">
-            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://onelive.us/wp-content/uploads/2014/08/flower-delivery-online.jpg" data-target="#image-gallery">
+        <div class="col-xs-6 col-md-3 gallery-image">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="img/Pic1.jpg" data-target="#image-gallery">
                 <img class="img-responsive" src="img/Pic1.jpg" alt="Short alt text">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-                <img src="img/Pic2.jpg" alt="...">
+        <div class="col-xs-6 col-md-3 gallery-image">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="img/Pic2.jpg" data-target="#image-gallery">
+                <img class="img-responsive" src="img/Pic2.jpg" alt="Short alt text">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-                <img src="img/Pic3.jpg" alt="...">
+        <div class="col-xs-6 col-md-3 gallery-image">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="img/Pic3.jpg" data-target="#image-gallery">
+                <img class="img-responsive" src="img/Pic3.jpg" alt="Short alt text">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-                <img src="img/Pic4.jpg" alt="...">
+        <div class="col-xs-6 col-md-3 gallery-image">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="img/Pic4.jpg" data-target="#image-gallery">
+                <img class="img-responsive" src="img/Pic4.jpg" alt="Short alt text">
             </a>
         </div>
     </div>
@@ -67,24 +68,24 @@
     <br><br>
 
     <div class="row">
-        <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-                <img src="img/Pic5.jpg" alt="...">
+        <div class="col-xs-6 col-md-3 gallery-image">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="img/Pic5.jpg" data-target="#image-gallery">
+                <img class="img-responsive" src="img/Pic5.jpg" alt="Short alt text">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-                <img src="img/Pic6.jpg" alt="...">
+        <div class="col-xs-6 col-md-3 gallery-image">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="img/Pic6.jpg" data-target="#image-gallery">
+                <img class="img-responsive" src="img/Pic6.jpg" alt="Short alt text">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-                <img src="img/Pic7.jpg" alt="...">
+        <div class="col-xs-6 col-md-3 gallery-image">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="img/Pic7.jpg" data-target="#image-gallery">
+                <img class="img-responsive" src="img/Pic7.jpg" alt="Short alt text">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-                <img src="img/Pic8.jpg" alt="...">
+        <div class="col-xs-6 col-md-3 gallery-image">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="img/Pic8.jpg" data-target="#image-gallery">
+                <img class="img-responsive" src="img/Pic8.jpg" alt="Short alt text">
             </a>
         </div>
     </div>
@@ -96,6 +97,16 @@
     <p>&copy; 2016 Nicholas Lee</p>
 </footer>
 
+</div>
+
+<div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img id="image-gallery-image" class="img-responsive" src="">
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
