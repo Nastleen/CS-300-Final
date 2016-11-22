@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Nicholas Lee">
+
+    <title>Picture Gallery</title>
+
+    <link rel="icon" href="img/icon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="FinalStyle.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet" >
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div id="includeNavMenu"></div>
+<script>
+    $("#includeNavMenu").load("NavMenu.html");
+</script>
+
+
+
+<script src="js/bootstrap.min.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <h1>Gallery</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://onelive.us/wp-content/uploads/2014/08/flower-delivery-online.jpg" data-target="#image-gallery">
+                <img class="img-responsive" src="img/Pic1.jpg" alt="Short alt text">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="img/Pic2.jpg" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="img/Pic3.jpg" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="img/Pic4.jpg" alt="...">
+            </a>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="img/Pic5.jpg" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="img/Pic6.jpg" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="img/Pic7.jpg" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="img/Pic8.jpg" alt="...">
+            </a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<footer class="footer" id="footerRight">
+    <p>&copy; 2016 Nicholas Lee</p>
+</footer>
+
+</div>
+
+</body>
+
+</html>
