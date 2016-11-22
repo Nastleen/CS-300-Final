@@ -18,7 +18,7 @@
 
 .page-header {
     text-align: center;
-    color: darkslategray;
+    color: black;
 }
 
 #footerRight {
@@ -45,6 +45,7 @@ h3 {
 
 #socialFont {
     font-family: "Comic Sans MS";
+    color: black;
 }
 
 .gallery-image {
@@ -56,6 +57,22 @@ h3 {
 #galleryHeader {
     padding-top: 30px;
     font-style: italic;
-    color: darkgreen;
+    color: black;
     font-family: cursive;
+}
+
+#emailHelp {
+    color: red;
+}
+
+#inputForm {
+    padding-top: 50px;
+    text-align: center;
+    color: black;
+    font-family: cursive;
+    font-style: italic;
+}
+
+#colorBear {
+    color: saddlebrown;
 }

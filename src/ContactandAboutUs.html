@@ -31,60 +31,57 @@
     $("#includeNavMenu").load("NavMenu.html");
 </script>
 
-<form>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="inputName">Name</label>
-        <input type="name" class="form-control" id="inputName" placeholder="Please enter your name here:">
-    </div>
+<div class="container">
+    <div class="row">
+        <h2 id="inputForm">Input Form</h2>
+        <hr class="featurette-divider">
+        <form>
+            <div class="form-group">
+                <label for="inputName">Name</label>
+                <input type="name" class="form-control" id="inputName" placeholder="Please enter your name here:">
+            </div>
 
-    <div class="form-group">
-        <label for="inputEmail">Email</label>
-        <input type="name" class="form-control" id="inputEmail" placeholder="Please enter your email here:">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
+            <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input type="name" class="form-control" id="inputEmail" placeholder="Please enter your email here:">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
 
-    <div class="form-group">
-        <label for="commentArea">Feedback</label>
-        <textarea class="form-control" id="commentArea" rows="3" placeholder="Please give us your comments here!"></textarea>
-    </div>
+            <div class="form-group">
+                <label for="commentArea">Feedback</label>
+                <textarea class="form-control" id="commentArea" rows="3" placeholder="Please give us your comments here!"></textarea>
+            </div>
 
-    <fieldset class="form-group">
-        <legend>Radio buttons</legend>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                Option one is this and that&mdash;be sure to include why it's great
-            </label>
+            <fieldset class="form-group">
+                <legend id="colorBear">How fast can a brown bear run?</legend>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        40 MPH
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                        30 MPH
+                    </label>
+                </div>
+
+            </fieldset>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input">
+                    Add your email to our mailing list?
+                </label>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
         </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                Option two can be something else and selecting it will deselect option one
-            </label>
-        </div>
-        <div class="form-check disabled">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-                Option three is disabled
-            </label>
-        </div>
-    </fieldset>
-    <div class="form-check">
-        <label class="form-check-label">
-            <input type="checkbox" class="form-check-input">
-            Check me out
-        </label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-<footer class="footer" id="footerRight">
-    <p>&copy; 2016 Nicholas Lee</p>
-</footer>
+</div>
+    <footer class="footer" id="footerRight">
+        <p>&copy; 2016 Nicholas Lee</p>
+    </footer>
 
 </body>
 
