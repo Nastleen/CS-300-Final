@@ -22,24 +22,38 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script>
-        var input1 = document.getElementById('ename');
-        var input2 = document.getElementById('fname');
         input.oninvalid = function(event) {
             event.target.setCustomValidity('Please match the requested format.');
+        }
+
+        $(document).ready(function(){
+            $('#myForm').on('submit', function(e) {
+                e.preventDefault();
+                buttonClicked();
+            });
+        });
+
+        function buttonClicked() {
+            if (!validateForm())
+                return;
+
+                alert("Thank you for your submission!");
         }
 
         function validateForm() {
             var x = document.forms["myForm"]["fname"].value;
             var y = document.forms["myForm"]["ename"].value;
             if (x == "") {
-                alert("Name must be filled out");
+                alert("Name must be filled out!");
                 return false;
             }
 
             if (y == "") {
-                alert("Email must be filled out");
+                alert("Email must be filled out!");
                 return false;
             }
+
+            return true;
         }
     </script>
 
@@ -56,7 +70,7 @@
     <div class="row">
         <h2 id="inputForm">Input Form</h2>
         <hr class="featurette-divider">
-        <form name="myForm" onsubmit="return validateForm()" method="post">
+        <form name="myForm" onsubmit="buttonClicked()" method="post">
             <div class="form-group">
                 <label for="inputName">Name</label>
                 <input type="name" name="fname" pattern="^[_A-z0-9]{1,}$" class="form-control" id="inputName" placeholder="Please enter your name here:">
@@ -96,19 +110,9 @@
                 </label>
             </div>
             <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <div class="modal fade" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Thank you for your submission!</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>You will be redirected to the homepage in 3 seconds...</p>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
+
+            <button type="submit" class="btn btn-primary btn-modal">Submit Form</button>
+
         </form>
         </div>
 </div>
