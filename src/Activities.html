@@ -15,6 +15,7 @@
     <link href="css/bootstrap-social.css" rel="stylesheet" >
     <link href="css/font-awesome.css" rel="stylesheet">
 
+    <script type="text/javascript" src="js/canvasjs.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!--[if lt IE 9]>
@@ -48,6 +49,7 @@
             });
         });
     </script>
+
 </head>
 
 <body>
@@ -105,6 +107,66 @@
         <br>
         <b>Hiking:</b>
         Hiking is a great way to see and enjoy the park. It allows a unique opportunity for non-motorized use of certain park roads. Hiking, bicycling, jogging, roller blades, roller skis, and similar means of non-motorized travel are permitted between the West Entrance and Mammoth Hot Springs as conditions allow from mid-March through mid-April. The opening day in March is weather dependant.
+        <br>
+        <br>
+
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+        <script type="text/javascript">
+            window.onload = function () {
+                var chart = new CanvasJS.Chart("chartContainer", {
+
+                    title:{
+                        text:"Average Monthly Visitation, YellowStone National Park 1979-2015 (persons)"
+
+                    },
+                    animationEnabled: true,
+                    axisX:{
+                        interval: 1,
+                        gridThickness: 0,
+                        labelFontSize: 10,
+                        labelFontStyle: "bold",
+                        labelFontWeight: "bold",
+                        labelFontFamily: "Times New Roman"
+
+                    },
+                    axisY2:{
+                        interlacedColor: "rgba(1,77,101,.2)",
+                        gridColor: "rgba(1,77,101,.1)"
+
+                    },
+
+                    data: [
+                        {
+                            type: "bar",
+                            name: "visitors",
+                            axisYType: "secondary",
+                            color: "#f5",
+                            dataPoints: [
+
+                                {y: 19923, label: "December"  },
+                                {y: 12688, label: "November"  },
+                                {y: 131262, label: "October"  },
+                                {y: 408809, label: "September"  },
+                                {y: 682730, label: "August"  },
+                                {y: 768936, label: "July"  },
+                                {y: 530769, label: "June"  },
+                                {y: 209402, label: "May"  },
+                                {y: 27711, label: "April"  },
+                                {y: 20023, label: "March"  },
+                                {y: 35645, label: "February"  },
+                                {y: 28522, label: "January"  }
+
+                            ]
+                        }
+
+                    ]
+                });
+
+                chart.render();
+            }
+        </script>
+
     </div>
 </div>
 
