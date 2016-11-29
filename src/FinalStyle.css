@@ -142,5 +142,7 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+article, aside, figure, footer,header, hgroup, menu, nav, section { display: block; }
+
 
 
