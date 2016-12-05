@@ -142,6 +142,10 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+#fishSpecies {
+    color: saddlebrown;
+}
+
 article, aside, figure, footer,header, hgroup, menu, nav, section { display: block; }
 
 

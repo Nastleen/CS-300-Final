@@ -15,13 +15,16 @@
     <link href="css/bootstrap-social.css" rel="stylesheet" >
     <link href="css/font-awesome.css" rel="stylesheet">
 
-    <script type="text/javascript" src="js/canvasjs.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.collapse.js"></script>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script type="text/javascript" src="js/highcharts.js"></script>
+
 
     <div id="includeNavMenu"></div>
     <script>
@@ -31,6 +34,7 @@
     <script>
         $(document).ready(function () {
             $(".description").hide();
+            $("#bikingDesc").toggle();
             $("#biking-icon").click(function() {
                 $(".description").hide();
                 $("#bikingDesc").toggle();
@@ -47,7 +51,68 @@
                 $(".description").hide();
                 $("#hikingDesc").toggle();
             });
+
+            Highcharts.chart('chartContainer', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Average Monthly Visitation, YellowStone National Park 1979-2015 (persons)'
+                },
+                xAxis: {
+                    type: 'category',
+                    labels: {
+                        rotation: -45,
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Attendance (thousands)'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: '<b>{point.y:.1f} thousand</b>'
+                },
+                series: [{
+                    name: 'Population',
+                    data: [
+                        ['January', 28.522],
+                        ['February', 35.645],
+                        ['March', 20.023],
+                        ['April', 277.11],
+                        ['May', 209.402],
+                        ['June', 530.769],
+                        ['July', 768.936],
+                        ['August', 682.730],
+                        ['September', 408.809],
+                        ['October', 131.262],
+                        ['November', 12.688],
+                        ['December', 19.923],
+                    ],
+                    dataLabels: {
+                        enabled: true,
+                        rotation: -90,
+                        color: '#F5',
+                        align: 'right',
+                        format: '{point.y:.1f}', // one decimal
+                        y: 10, // 10 pixels down from the top
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                }]
+            });
         });
+
     </script>
 
 </head>
@@ -164,9 +229,39 @@
     <div class="row description" id="fishingDesc">
         <br>
         <b>Fishing in Yellowstone:</b>
-        Yellowstone National Park is managed to protect cultural and natural resources and outstanding scenery, and to provide for visitor use. Fishing has been a major visitor activity for well over a century. Because of this history, fishing continues to be allowed and can complement, and in some cases even enhance, the park's primary purpose to preserve natural environments and native species.<br><br>
+        Yellowstone National Park is managed to protect cultural and natural resources and outstanding scenery, and to provide for visitor use. Fishing has been a major visitor activity for well over a century. Because of this history, fishing continues to be allowed and can complement, and in some cases even enhance, the park's primary purpose to preserve natural environments and native species.<br>
+
+        <div data-collapse="accordion">
+            <h3>Fish Species</h3>
+            <div>
+                <ul>
+                    <li>Arctic Grayling</li>
+                    <li>Snake River Finespotted Cutthroat Trout</li>
+                    <li>Westslope Cutthroat Trout</li>
+                    <li>Yellowstone Cutthroat Trout</li>
+                    <li>Longnose Dace</li>
+                    <li>Longnose Sucker</li>
+                    <li>Mottled Sculpin</li>
+                    <li>Mountain Sucker</li>
+                    <li>Mountain Whitefish</li>
+                    <li>Redside Shiner</li>
+                    <li>Speckled Dace</li>
+                    <li>Utah Chub</li>
+                    <li>Utah Sucker</li>
+                    <li>Brook Trout</li>
+                    <li>Brown Trout</li>
+                    <li>Lake Chub</li>
+                    <li>Lake Trout</li>
+                    <li>Rainbow Trout</li>
+                    <li>Cutthroat Trout x Rainbow Trout Hybrid</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
         <b>Fisheries Science in Yellowstone</b>
         Native cutthroat trout are the most ecologically important fish of the park and the most prized, and highly regarded by visiting anglers. Several factors, mostly related to exotic species introductions, are threatening the persistence of these fish. The Yellowstone Fisheries Program strives to use best available science in addressing these threats, with a focus on direct, aggressive intervention, and welcomed assistance by visiting anglers.
+        <br>
     </div>
     <div class="row description" id="hikingDesc">
         <br>
@@ -176,62 +271,6 @@
         <br>
 
         <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-
-        <script type="text/javascript">
-            window.onload = function () {
-                var chart = new CanvasJS.Chart("chartContainer", {
-
-                    title:{
-                        text:"Average Monthly Visitation, YellowStone National Park 1979-2015 (persons)"
-
-                    },
-                    animationEnabled: true,
-                    axisX:{
-                        interval: 1,
-                        gridThickness: 0,
-                        labelFontSize: 10,
-                        labelFontStyle: "bold",
-                        labelFontWeight: "bold",
-                        labelFontFamily: "Times New Roman"
-
-                    },
-                    axisY2:{
-                        interlacedColor: "rgba(1,77,101,.2)",
-                        gridColor: "rgba(1,77,101,.1)"
-
-                    },
-
-                    data: [
-                        {
-                            type: "bar",
-                            name: "visitors",
-                            axisYType: "secondary",
-                            color: "#f5",
-                            dataPoints: [
-
-                                {y: 19923, label: "December"  },
-                                {y: 12688, label: "November"  },
-                                {y: 131262, label: "October"  },
-                                {y: 408809, label: "September"  },
-                                {y: 682730, label: "August"  },
-                                {y: 768936, label: "July"  },
-                                {y: 530769, label: "June"  },
-                                {y: 209402, label: "May"  },
-                                {y: 27711, label: "April"  },
-                                {y: 20023, label: "March"  },
-                                {y: 35645, label: "February"  },
-                                {y: 28522, label: "January"  }
-
-                            ]
-                        }
-
-                    ]
-                });
-
-                chart.render();
-            }
-        </script>
-
     </div>
 </div>
 
