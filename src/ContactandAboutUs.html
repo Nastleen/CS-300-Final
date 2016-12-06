@@ -37,8 +37,20 @@
             if (!validateForm())
                 return;
 
-                alert("Thank you for your submission!");
+            alert("Thank you for your submission!");
         }
+
+        $(document).ready(function(){
+            $('#myForm').on('submit', function(e){
+                e.preventDefault();
+                var formString = $('#inputForm').serializeArray();
+                $.each(formString, function(i,field){
+                    console.log(i + ': ' + field.name + " = " + field.value);
+                    $("#results").append(field.name + " = " + field.value + '</br>');
+                })
+
+            });
+        });
 
         function validateForm() {
             var x = document.forms["myForm"]["fname"].value;
@@ -138,68 +150,86 @@
 
             <br>
             <div class="form-group">
-                    <div class="input-group">
-                        <select name="state" class="form-control selectpicker" >
-                            <option value="empty" >Please select your state</option>
-                            <option>Alabama</option>
-                            <option>Alaska</option>
-                            <option >Arizona</option>
-                            <option >Arkansas</option>
-                            <option >California</option>
-                            <option >Colorado</option>
-                            <option >Connecticut</option>
-                            <option >Delaware</option>
-                            <option >District of Columbia</option>
-                            <option> Florida</option>
-                            <option >Georgia</option>
-                            <option >Hawaii</option>
-                            <option >Idaho</option>
-                            <option >Illinois</option>
-                            <option >Indiana</option>
-                            <option >Iowa</option>
-                            <option> Kansas</option>
-                            <option >Kentucky</option>
-                            <option >Louisiana</option>
-                            <option>Maine</option>
-                            <option >Maryland</option>
-                            <option> Massachusetts</option>
-                            <option >Michigan</option>
-                            <option >Minnesota</option>
-                            <option>Mississippi</option>
-                            <option>Missouri</option>
-                            <option>Montana</option>
-                            <option>Nebraska</option>
-                            <option>Nevada</option>
-                            <option>New Hampshire</option>
-                            <option>New Jersey</option>
-                            <option>New Mexico</option>
-                            <option>New York</option>
-                            <option>North Carolina</option>
-                            <option>North Dakota</option>
-                            <option>Ohio</option>
-                            <option>Oklahoma</option>
-                            <option>Oregon</option>
-                            <option>Pennsylvania</option>
-                            <option>Rhode Island</option>
-                            <option>South Carolina</option>
-                            <option>South Dakota</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Utah</option>
-                            <option>Vermont</option>
-                            <option>Virginia</option>
-                            <option >Washington</option>
-                            <option >West Virginia</option>
-                            <option>Wisconsin</option>
-                            <option >Wyoming</option>
-                        </select>
+                <div class="input-group">
+                    <select name="state" class="form-control selectpicker" >
+                        <option value="empty" >Please select your state</option>
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option >Arizona</option>
+                        <option >Arkansas</option>
+                        <option >California</option>
+                        <option >Colorado</option>
+                        <option >Connecticut</option>
+                        <option >Delaware</option>
+                        <option >District of Columbia</option>
+                        <option> Florida</option>
+                        <option >Georgia</option>
+                        <option >Hawaii</option>
+                        <option >Idaho</option>
+                        <option >Illinois</option>
+                        <option >Indiana</option>
+                        <option >Iowa</option>
+                        <option> Kansas</option>
+                        <option >Kentucky</option>
+                        <option >Louisiana</option>
+                        <option>Maine</option>
+                        <option >Maryland</option>
+                        <option> Massachusetts</option>
+                        <option >Michigan</option>
+                        <option >Minnesota</option>
+                        <option>Mississippi</option>
+                        <option>Missouri</option>
+                        <option>Montana</option>
+                        <option>Nebraska</option>
+                        <option>Nevada</option>
+                        <option>New Hampshire</option>
+                        <option>New Jersey</option>
+                        <option>New Mexico</option>
+                        <option>New York</option>
+                        <option>North Carolina</option>
+                        <option>North Dakota</option>
+                        <option>Ohio</option>
+                        <option>Oklahoma</option>
+                        <option>Oregon</option>
+                        <option>Pennsylvania</option>
+                        <option>Rhode Island</option>
+                        <option>South Carolina</option>
+                        <option>South Dakota</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Utah</option>
+                        <option>Vermont</option>
+                        <option>Virginia</option>
+                        <option >Washington</option>
+                        <option >West Virginia</option>
+                        <option>Wisconsin</option>
+                        <option >Wyoming</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="container" id="submitButton">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Your submitted information</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div id="results"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
+
+                </div>
+
             </div>
 
             <button type="submit" class="btn btn-primary btn-modal">Submit Form</button>
 
         </form>
-        </div>
+    </div>
 </div>
 
 <nav>
