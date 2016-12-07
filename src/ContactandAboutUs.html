@@ -22,35 +22,34 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script>
-        input.oninvalid = function(event) {
-            event.target.setCustomValidity('Please match the requested format.');
-        }
-
         $(document).ready(function(){
-            $('#myForm').on('submit', function(e) {
+            $("#myForm").submit(function(e) {
                 e.preventDefault();
                 buttonClicked();
             });
+            $("#popUpClose").click(function() {
+                $("#popUpWindow").hide();
+            });
+            $("#popUpWindow").hide();
+
         });
 
         function buttonClicked() {
             if (!validateForm())
                 return;
 
-            alert("Thank you for your submission!");
+            var formString = $('#myForm').serializeArray();
+
+            $("#results").html("");
+            $("#results").append("Name: " + formString[0].value + '</br>');
+            $("#results").append("Email: " + formString[1].value + '</br>');
+            $("#results").append("Feedback: " + formString[2].value + '</br>');
+            $("#results").append("Question: " + formString[3].value + '</br>');
+            $("#results").append("Mailing List: " + formString[4].value + '</br>');
+            $("#results").append("State: " + formString[5].value + '</br>');
+
+            $("#popUpWindow").show();
         }
-
-        $(document).ready(function(){
-            $('#myForm').on('submit', function(e){
-                e.preventDefault();
-                var formString = $('#inputForm').serializeArray();
-                $.each(formString, function(i,field){
-                    console.log(i + ': ' + field.name + " = " + field.value);
-                    $("#results").append(field.name + " = " + field.value + '</br>');
-                })
-
-            });
-        });
 
         function validateForm() {
             var x = document.forms["myForm"]["fname"].value;
@@ -108,7 +107,7 @@
         <h2 id="inputForm">Input Form</h2>
         <hr class="featurette-divider">
 
-        <form name="myForm" onsubmit="buttonClicked()" method="post">
+        <form id="myForm" method="post">
             <div class="form-group">
                 <label for="inputName">Name</label>
                 <input type="name" name="fname" pattern="^[_A-z0-9]{1,}$" class="form-control" id="inputName" placeholder="Please enter your name here:">
@@ -122,20 +121,20 @@
 
             <div class="form-group">
                 <label for="commentArea">Feedback</label>
-                <textarea class="form-control" id="commentArea" rows="3" placeholder="Please give us your comments here!"></textarea>
+                <input type="text" name="feedback" class="form-control" id="commentArea" rows="3" placeholder="Please give us your comments here!"></input>
             </div>
 
             <fieldset class="form-group">
                 <legend id="colorBear">How fast can a brown bear run?</legend>
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="40 MPH" checked>
                         40 MPH
                     </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="30 MPH">
                         30 MPH
                     </label>
                 </div>
@@ -143,7 +142,8 @@
             </fieldset>
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
+                    <input id='mailingList' type="checkbox" class="form-check-input" value="Yes" name="mailingList">
+                    <input id='mailingListHidden' type='hidden' value="No" name='mailingListHidden'>
                     Add your email to our mailing list?
                 </label>
             </div>
@@ -152,7 +152,7 @@
             <div class="form-group">
                 <div class="input-group">
                     <select name="state" class="form-control selectpicker" >
-                        <option value="empty" >Please select your state</option>
+                        <option value="" >Please select your state</option>
                         <option>Alabama</option>
                         <option>Alaska</option>
                         <option >Arizona</option>
@@ -208,7 +208,7 @@
                 </div>
             </div>
 
-            <div class="container" id="submitButton">
+            <div class="container" id="popUpWindow">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -218,7 +218,7 @@
                             <div id="results"></div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="popUpClose">Close</button>
                         </div>
                     </div>
 
